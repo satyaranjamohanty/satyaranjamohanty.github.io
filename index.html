@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Satya Mohanty | Salesforce Technical Lead & Architect</title>
+<meta name="description" content="Satya Mohanty, Salesforce Technical Lead and Architect with 13 years of experience in Apex, LWC, integrations and scalable Salesforce architecture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#032D60; --blue:#0176D3; --blue-dark:#014486; --sky:#EAF5FE; --mist:#F4F8FB;
+  --ink:#16325C; --muted:#4A5E7A; --line:#D8E6F3; --gold:#FFB75D; --white:#fff;
+  --display:"Outfit","Segoe UI",system-ui,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--white);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(3,45,96,.92);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+nav .brand{font-family:var(--display);font-weight:600;color:#fff;text-decoration:none;font-size:1.1rem}
+nav ul{list-style:none;display:flex;gap:1.5rem;margin:0;padding:0}
+nav ul a{color:#CFE6FB;text-decoration:none;font-size:.95rem}
+nav ul a:hover{color:#fff}
+@media (max-width:760px){nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(160deg,var(--navy) 0%,var(--blue-dark) 55%,var(--blue) 100%);color:#fff;padding:4.5rem 0 9rem;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center}
+.photo{width:210px;height:210px;border-radius:50%;object-fit:cover;border:6px solid rgba(255,255,255,.18);box-shadow:0 0 0 1px rgba(255,255,255,.35)}
+.hero .role{font-family:var(--display);font-size:1.15rem;color:#9FD2FA;margin:0 0 .5rem}
+.hero h1{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;letter-spacing:-.01em}
+.hero p.lede{max-width:58ch;color:#E2F0FC;font-size:1.15rem;margin:1.25rem 0 1.75rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;border-radius:999px;font-weight:600;text-decoration:none;font-size:.98rem}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.6)}
+.btn-light:hover{background:var(--sky)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn svg{width:18px;height:18px;flex:none}
+/* the cloud edge: the one bold element */
+.cloud-edge{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:130px;color:var(--white)}
+@media (max-width:760px){
+  .hero{padding:3rem 0 7rem}
+  .hero .wrap{grid-template-columns:1fr;gap:1.75rem}
+  .photo{width:150px;height:150px}
+  .cloud-edge{height:50px}
+}
+
+/* facts */
+.facts{margin-top:-3.5rem;position:relative;z-index:2}
+.facts dl{display:grid;grid-template-columns:repeat(4,1fr);margin:0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.facts div{padding:1.4rem 1.5rem;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts dt{font-size:.95rem;color:var(--muted);order:2}
+.facts dd{margin:0 0 .15rem;font-family:var(--display);font-size:1.9rem;font-weight:600;color:var(--navy)}
+.facts div{display:flex;flex-direction:column}
+@media (max-width:760px){.facts dl{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+section{padding:5rem 0}
+.sec-head{margin-bottom:2.25rem;max-width:62ch}
+.sec-head h2{font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--navy);font-weight:600}
+.sec-head p{color:var(--muted);margin:.6rem 0 0}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem}
+.about-grid p{margin:0 0 1rem;max-width:65ch}
+.skills h3{font-size:1rem;color:var(--navy);margin:1.1rem 0 .45rem}
+.skills h3:first-child{margin-top:0}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0;padding:0}
+.tags li{background:var(--sky);color:var(--blue-dark);padding:.25rem .7rem;border-radius:999px;font-size:.9rem}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+/* experience timeline */
+#experience{background:var(--mist)}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.job{position:relative;padding:0 0 2.75rem 2.75rem}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:0;top:6px;width:20px;height:20px;border-radius:50%;background:#fff;border:4px solid var(--blue)}
+.job.current::before{background:var(--blue);box-shadow:0 0 0 5px rgba(1,118,211,.18)}
+.job .when{font-size:.95rem;color:var(--muted)}
+.job h3{font-size:1.35rem;color:var(--navy);margin:.15rem 0 .1rem}
+.job .org{font-weight:600;color:var(--blue-dark)}
+.job ul{margin:.85rem 0 0;padding-left:1.1rem;max-width:72ch}
+.job li{margin-bottom:.4rem}
+.job li::marker{color:var(--blue)}
+
+/* trailhead */
+.trail{display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem;align-items:start}
+.rank{background:var(--navy);color:#fff;border-radius:22px;padding:2rem;position:relative;overflow:hidden}
+.rank svg.mountain{position:absolute;right:-10px;bottom:-6px;width:240px;opacity:.16}
+.rank .label{color:#9FD2FA;font-size:.95rem}
+.rank h3{font-size:2rem;margin:.3rem 0 1.4rem;color:#fff}
+.rank h3 span{color:var(--gold)}
+.rank dl{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:0 0 1.75rem;position:relative}
+.rank dd{margin:0;font-family:var(--display);font-size:1.7rem;font-weight:600}
+.rank dt{font-size:.9rem;color:#BFDDF7}
+.rank dl div{display:flex;flex-direction:column-reverse}
+.honors{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.honors li{display:grid;grid-template-columns:44px 1fr;gap:1rem;align-items:start;padding:1.1rem 1.2rem;border:1px solid var(--line);border-radius:14px}
+.honors .ic{width:44px;height:44px;border-radius:12px;background:var(--sky);display:grid;place-items:center;color:var(--blue)}
+.honors .ic svg{width:24px;height:24px}
+.honors h4{margin:0;font-family:var(--display);font-size:1.08rem;color:var(--navy);font-weight:600}
+.honors p{margin:.15rem 0 0;color:var(--muted);font-size:.97rem}
+@media (max-width:860px){.trail{grid-template-columns:1fr}}
+
+/* projects */
+#projects{background:var(--mist)}
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.25rem}
+.project{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column}
+.project .status{align-self:flex-start;font-size:.85rem;font-weight:600;padding:.2rem .65rem;border-radius:999px;background:#FFF3E0;color:#8C4B02;margin-bottom:.9rem}
+.project .status.done{background:#E3F6EA;color:#1C6B3A}
+.project h3{font-size:1.2rem;color:var(--navy)}
+.project p{color:var(--muted);margin:.5rem 0 1rem;flex:1}
+.project .tags li{font-size:.82rem}
+.project .links{margin-top:1rem;display:flex;gap:1rem;font-weight:600;font-size:.95rem}
+.project.placeholder{border:2px dashed #B5D3EE;background:transparent}
+.project.placeholder h3,.project.placeholder p{color:#7F95B0}
+
+/* education */
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.edu article{border-left:4px solid var(--blue);padding:.25rem 0 .25rem 1.25rem}
+.edu h3{font-size:1.2rem;color:var(--navy)}
+.edu p{margin:.3rem 0 0;color:var(--muted)}
+@media (max-width:700px){.edu{grid-template-columns:1fr}}
+
+/* contact */
+footer{background:var(--navy);color:#E2F0FC;padding:4.5rem 0 2.5rem}
+footer h2{font-size:clamp(1.8rem,4vw,2.6rem);color:#fff;max-width:22ch}
+footer p{max-width:55ch}
+footer .actions{margin:1.75rem 0 3.5rem}
+footer small{color:#8FB3D9;display:block;border-top:1px solid rgba(255,255,255,.15);padding-top:1.5rem}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Satya Mohanty</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#trailhead">Trailhead</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <img class="photo" src="data:image/jpeg;base64,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" alt="Portrait of Satya Mohanty">
+    <div>
+      <p class="role">Salesforce Technical Lead &amp; Architect</p>
+      <h1>Satya Mohanty</h1>
+      <p class="lede">I design and build Salesforce solutions that hold up at enterprise scale: Apex, Lightning Web Components, integrations and platform architecture, with a focus on performance, security and reliability.</p>
+      <div class="actions">
+        <a class="btn btn-light" href="https://www.linkedin.com/in/satya-mohanty-248423120/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn</a>
+        <a class="btn btn-ghost" href="https://www.salesforce.com/trailblazer/satyamohanty" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 20l6-11 4 6 3-4 5 9z"/></svg>
+          Trailblazer profile</a>
+        <a class="btn btn-ghost" href="mailto:satyaranzan.mohanty@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          Email me</a>
+      </div>
+    </div>
+  </div>
+  <svg class="cloud-edge" viewBox="0 0 1440 130" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0 130V78c60-30 130-34 190-8 30-46 110-60 160-22 40-52 140-58 190-10 50-40 130-36 170 6 50-38 140-40 185 8 45-44 150-48 200 0 50-36 120-30 160 8 55-40 130-30 185 10V130z"/>
+  </svg>
+</header>
+
+<div class="facts wrap">
+  <dl>
+    <div><dt>Years building on Salesforce</dt><dd>13</dd></div>
+    <div><dt>Engineers &amp; Sales Ops people I lead</dt><dd>6</dd></div>
+    <div><dt>Trailhead badges</dt><dd>1000+</dd></div>
+    <div><dt>Apex classes moved to Lightning</dt><dd>60+</dd></div>
+  </dl>
+</div>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="sec-head"><h2>About me</h2></div>
+      <p>I'm a Salesforce Technical Lead and Architect with 13 years of experience in enterprise solution design, customization and platform architecture.</p>
+      <p>At UEI Electronics I lead a team of four Salesforce engineers and two Sales Operations professionals, owning solution architecture and implementation end to end. I also join sales and pre-sales calls to run solution demos, assess technical feasibility and estimate effort, helping the business win new work.</p>
+      <p>I'm known for building reusable frameworks and for turning complex business requirements into scalable Salesforce applications that people actually use.</p>
+    </div>
+    <div class="skills" aria-label="Technical skills">
+      <h3>Salesforce</h3>
+      <ul class="tags"><li>Apex</li><li>LWC</li><li>Visualforce</li><li>SOQL / SOSL</li><li>CPQ</li><li>Flows</li><li>Sales Cloud</li><li>Service Cloud</li></ul>
+      <h3>Architecture &amp; integration</h3>
+      <ul class="tags"><li>REST &amp; SOAP APIs</li><li>Integration patterns</li><li>Platform Events</li><li>Named Credentials</li><li>OAuth 2.0</li></ul>
+      <h3>DevOps &amp; tools</h3>
+      <ul class="tags"><li>Salesforce DX</li><li>CI/CD</li><li>Flosum</li><li>GitLab</li><li>Bitbucket</li><li>Data Loader</li></ul>
+      <h3>Languages &amp; web</h3>
+      <ul class="tags"><li>Java</li><li>C#</li><li>C++</li><li>JavaScript</li><li>HTML</li><li>XML</li><li>SLDS</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head"><h2>Where I've worked</h2><p>From software developer to leading Salesforce architecture for an enterprise.</p></div>
+    <ol class="timeline">
+      <li class="job current">
+        <span class="when">April 2021 to present</span>
+        <h3>Technical Lead / Salesforce Architect</h3>
+        <span class="org">UEI Electronics</span>
+        <ul>
+          <li>Led the ERP migration to Oracle, keeping data transition smooth and systems running without disruption.</li>
+          <li>Designed a secure Oracle to Salesforce integration using OAuth 2.0, bulk SOQL with JSON_TABLE parsing and MERGE-based upserts, removing the need for external ETL tools and adding robust error handling.</li>
+          <li>Built multiple Lightning Web Components for specific business needs, improving UI and UX across applications.</li>
+          <li>Created an LWC-based real-time currency conversion component (USD to INR).</li>
+          <li>Integrated Salesforce with external systems including Costool, Kaydon and the HR Portal to keep enterprise data in sync.</li>
+          <li>Implemented a custom Product Marketing Request object with approval workflows and price tracking.</li>
+          <li>Work daily with sales teams to streamline the campaign to lead to order lifecycle.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <span class="when">February 2018 to March 2021</span>
+        <h3>Salesforce Developer</h3>
+        <span class="org">Honeywell Technology Solutions</span>
+        <ul>
+          <li>Implemented Single Sign-On for an Unlimited Edition Salesforce org.</li>
+          <li>Led the Classic to Lightning migration, converting 60+ Apex classes and 80+ buttons and links using Aura and LWC.</li>
+          <li>Implemented Product Line Items and Scheduling integrated with SAP.</li>
+          <li>Designed a discretionary fund management process that replaced a legacy tool and saved significant operational costs.</li>
+          <li>Built an automated Wins Report that emails real-time performance updates to senior management.</li>
+          <li>Designed AERO Sales Coach, a real-time sales performance tool for account visibility and rep accountability.</li>
+          <li>Delivered the AERO fleet maintenance tracking process for Bangalore Airport operations.</li>
+          <li>Supported the Salesforce Analytics rollout and troubleshooting for the sales team.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <span class="when">February 2017 to February 2018</span>
+        <h3>Senior Software Developer</h3>
+        <span class="org">Datamatics Global Services</span>
+      </li>
+      <li class="job">
+        <span class="when">September 2013 to January 2017</span>
+        <h3>Software Developer</h3>
+        <span class="org">Maniere Software</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="trailhead">
+  <div class="wrap">
+    <div class="sec-head"><h2>Trailhead &amp; community</h2><p>Learning in public and showing up for the Salesforce community.</p></div>
+    <div class="trail">
+      <div class="rank">
+        <svg class="mountain" viewBox="0 0 200 120" aria-hidden="true"><path fill="#fff" d="M0 120L60 30l30 40 25-30 85 80z"/></svg>
+        <span class="label">Current Trailhead rank</span>
+        <h3><span>All Star</span> Ranger</h3>
+        <dl>
+          <div><dt>Badges</dt><dd>1000+</dd></div>
+          <div><dt>Trails</dt><dd>150+</dd></div>
+          <div><dt>Points</dt><dd>390K+</dd></div>
+        </dl>
+        <a class="btn btn-light" href="https://www.salesforce.com/trailblazer/satyamohanty" target="_blank" rel="noopener">See live profile</a>
+      </div>
+      <ul class="honors">
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></span>
+          <div><h4>Agentblazer Champion &amp; Innovator '26</h4><p>Recognized for hands-on work with Agentforce and AI agents on the Salesforce platform.</p></div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5M15 14.6c2.6-.3 5 1.3 6.5 4.4"/></svg></span>
+          <div><h4>Salesforce community events</h4><p>Engaged contributor at the Salesforce Release Summit and the Net Zero Innovation Seminar in Singapore.</p></div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg></span>
+          <div><h4>AERO Best Engineer Award</h4><p>Honeywell recognition for delivering high-impact Salesforce solutions for the AERO business.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head"><h2>What I'm working on</h2><p>Personal projects, experiments and open-source work.</p></div>
+    <div class="projects">
+      <!--
+        HOW TO ADD A PROJECT
+        Copy one <article class="project"> ... </article> block below, then edit:
+        - status: "In progress"  or use class="status done" with text "Completed"
+        - title, description, tech tags
+        - links: replace the # with your GitHub repo or demo URL (or delete a link you don't need)
+        Delete the "placeholder" word from class="project placeholder" once it has real content.
+      -->
+      <article class="project placeholder">
+        <span class="status">In progress</span>
+        <h3>Your project title</h3>
+        <p>One or two sentences on what it does and the problem it solves.</p>
+        <ul class="tags"><li>Apex</li><li>LWC</li></ul>
+        <div class="links"><a href="#">Code</a><a href="#">Demo</a></div>
+      </article>
+      <article class="project placeholder">
+        <span class="status">In progress</span>
+        <h3>Your project title</h3>
+        <p>One or two sentences on what it does and the problem it solves.</p>
+        <ul class="tags"><li>Agentforce</li><li>Flows</li></ul>
+        <div class="links"><a href="#">Code</a><a href="#">Demo</a></div>
+      </article>
+      <article class="project placeholder">
+        <span class="status done">Completed</span>
+        <h3>Your project title</h3>
+        <p>One or two sentences on what it does and the problem it solves.</p>
+        <ul class="tags"><li>Integration</li><li>REST API</li></ul>
+        <div class="links"><a href="#">Code</a><a href="#">Demo</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head"><h2>Education</h2></div>
+    <div class="edu">
+      <article><h3>Bachelor of Technology (B.Tech)</h3><p>Biju Patnaik University of Technology (BPUT), 2008 to 2012</p></article>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Have a Salesforce challenge? Let's talk.</h2>
+    <p>I'm open to conversations about Salesforce architecture, integrations and leading delivery teams.</p>
+    <div class="actions">
+      <a class="btn btn-light" href="mailto:satyaranzan.mohanty@gmail.com">satyaranzan.mohanty@gmail.com</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/satya-mohanty-248423120/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+    <small>&copy; 2026 Satya Mohanty</small>
+  </div>
+</footer>
+
+</body>
+</html>
